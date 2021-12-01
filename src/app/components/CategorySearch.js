@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from "prop-types";
 
 export const CategorySearch = ({ setCategories }) => {
 
@@ -27,3 +28,7 @@ export const CategorySearch = ({ setCategories }) => {
         </form>
     )
 }
+
+CategorySearch.propTypes = {
+    setCategories: PropTypes.func.isRequired
+};
