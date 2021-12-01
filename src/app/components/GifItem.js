@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const GifItem = ({ category }) => {
+
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        getGif();
+    }, [])
 
     const searchEndPoint = "gifs/search";
     const baseUrl = "https://api.giphy.com/v1/";
@@ -22,11 +28,9 @@ export const GifItem = ({ category }) => {
         console.log(gifs);
     };
 
-    getGif();
-
     return (
-        <div>
+        <>
             <p>{ category }</p>
-        </div>
+        </>
     )
 }
