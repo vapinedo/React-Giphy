@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CategoryAdd } from '@components/CategoryAdd';
 import "./GifList.css"
 
 export const GifList = () => {
@@ -19,6 +20,7 @@ export const GifList = () => {
     return (
         <div>
             <h3>GifList works!</h3>
+            <CategoryAdd />
 
             <ul>
                 {
