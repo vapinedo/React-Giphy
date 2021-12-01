@@ -11,6 +11,7 @@ export const CategorySearch = ({ setCategories }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        if (inputValue.trim().length < 2) return;
         setCategories(prevCategories => [inputValue, ...prevCategories]);
     };
 
