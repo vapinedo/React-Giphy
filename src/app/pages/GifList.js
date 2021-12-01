@@ -4,17 +4,17 @@ import "./GifList.css"
 
 export const GifList = () => {
 
-    const gifCategoryList = [
+    const categoryList = [
         "Samurai X",
         "One Punch Man",
         "Dragon Ball Z",
         "Hunter x Hunter"
     ];
 
-    const [gifCategory, setGifCategory] = useState(gifCategoryList);
+    const [categories, setCategories] = useState(categoryList);
 
-    const addGifCategory = () => {
-        setGifCategory([...gifCategory, "New category"])
+    const addCategory = () => {
+        setCategories([...categories, "New category"])
     };
 
     return (
@@ -24,13 +24,13 @@ export const GifList = () => {
 
             <ul>
                 {
-                    gifCategory.map(cat => {
+                    categories.map(cat => {
                         return <li key={cat}>{ cat }</li>
                     })
                 }
             </ul>
 
-            <button onClick={ addGifCategory }
+            <button onClick={ addCategory }
                 className="btn btn-outline-primary">Add Category</button>
         </div>
     )
