@@ -13,13 +13,9 @@ export const GifList = () => {
 
     const [categories, setCategories] = useState(categoryList);
 
-    const addCategory = (category) => {
-        setCategories([...categories, category])
-    };
-
     return (
         <div>
-            <CategorySearch addCategory={ addCategory } />
+            <CategorySearch setCategories={ setCategories } />
             <ul>
                 {
                     categories.map(cat => {

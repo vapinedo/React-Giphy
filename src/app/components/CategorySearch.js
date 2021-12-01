@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const CategorySearch = ({ addCategory }) => {
+export const CategorySearch = ({ setCategories }) => {
 
     const [inputValue, setInputValue] = useState("");
 
@@ -11,7 +11,7 @@ export const CategorySearch = ({ addCategory }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        addCategory(inputValue)
+        setCategories(prevCategories => [inputValue, ...prevCategories]);
     };
 
     return (
