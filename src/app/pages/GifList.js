@@ -5,20 +5,12 @@ import "./GifList.css"
 
 export const GifList = () => {
 
-    const categoryList = ["Dragon Ball Z"];
-
-    const [categories, setCategories] = useState(categoryList);
+    const [categories, setCategories] = useState([]);
 
     return (
-        <div>
+        <>
             <CategorySearch setCategories={ setCategories } />
-            <ul>
-                {
-                    categories.map(category => (
-                        <GifItem key={ category } category={ category } />
-                    ))
-                }
-            </ul>
-        </div>
+            <GifItem categories={ categories } />
+        </>
     )
 }

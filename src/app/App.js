@@ -5,8 +5,9 @@ export const App = () => {
   return (
     <>
       <div className="container-lg main-wrapper">
-        <h1>Giphy App</h1>
-        <hr />
+        <header>
+          <h1>Giphy App</h1>
+        </header>
 
         <GifList />
       </div>

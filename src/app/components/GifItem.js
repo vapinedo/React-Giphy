@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { GifCard } from '@components/GifCard';
 
 export const GifItem = ({ category }) => {
 
-    const [count, setCount] = useState(0)
+    const [images, setImages] = useState([])
 
     useEffect(() => {
         getGif();
@@ -14,7 +15,7 @@ export const GifItem = ({ category }) => {
 
     const getGif = async(category) => {
         const request = await fetch(`
-            ${baseUrl}${searchEndPoint}?q=${category}&limit=10&api_key=${apiKey}`
+            ${baseUrl}${searchEndPoint}?q=Rick+and+Morty&limit=10&api_key=${apiKey}`
         );
         const { data } = await request.json();
         const gifs = data.map(gif => {
@@ -24,13 +25,15 @@ export const GifItem = ({ category }) => {
                 url: gif.images?.downsized_medium.url
             }
         });
-
         console.log(gifs);
+        setImages(gifs);
     };
 
     return (
-        <>
-            <p>{ category }</p>
-        </>
+        <section className="row g-4">
+            {images.map(img => (
+                <GifCard key={ img.id } { ...img } />
+            ))}
+        </section>
     )
 }
