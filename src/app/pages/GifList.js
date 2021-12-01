@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
 import { CategorySearch } from '@components/CategorySearch';
+import { GifItem } from '@components/GifItem';
 import "./GifList.css"
 
 export const GifList = () => {
 
-    const categoryList = [
-        "Samurai X",
-        "One Punch Man",
-        "Dragon Ball Z",
-        "Hunter x Hunter"
-    ];
+    const categoryList = ["Dragon Ball Z"];
 
     const [categories, setCategories] = useState(categoryList);
 
@@ -18,9 +14,9 @@ export const GifList = () => {
             <CategorySearch setCategories={ setCategories } />
             <ul>
                 {
-                    categories.map(cat => {
-                        return <li key={cat}>{ cat }</li>
-                    })
+                    categories.map(category => (
+                        <GifItem key={ category } category={ category } />
+                    ))
                 }
             </ul>
         </div>
