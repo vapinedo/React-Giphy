@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CategoryAdd } from '@components/CategoryAdd';
+import { CategorySearch } from '@components/CategorySearch';
 import "./GifList.css"
 
 export const GifList = () => {
@@ -13,15 +13,13 @@ export const GifList = () => {
 
     const [categories, setCategories] = useState(categoryList);
 
-    const addCategory = () => {
-        setCategories([...categories, "New category"])
+    const addCategory = (category) => {
+        setCategories([...categories, category])
     };
 
     return (
         <div>
-            <h3>GifList works!</h3>
-            <CategoryAdd />
-
+            <CategorySearch addCategory={ addCategory } />
             <ul>
                 {
                     categories.map(cat => {
@@ -29,9 +27,6 @@ export const GifList = () => {
                     })
                 }
             </ul>
-
-            <button onClick={ addCategory }
-                className="btn btn-outline-primary">Add Category</button>
         </div>
     )
 }
