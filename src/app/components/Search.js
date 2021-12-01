@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from "prop-types";
 
-export const CategorySearch = ({ setCategories }) => {
+export const Search = ({ setCategory }) => {
 
     const [inputValue, setInputValue] = useState("");
 
@@ -13,7 +13,7 @@ export const CategorySearch = ({ setCategories }) => {
     const onSubmit = (e) => {
         e.preventDefault();
         if (inputValue.trim().length < 2) return;
-        setCategories(prevCategories => [...prevCategories, inputValue]);
+        setCategory(inputValue);
         setInputValue("");
     };
 
@@ -31,6 +31,6 @@ export const CategorySearch = ({ setCategories }) => {
     )
 }
 
-CategorySearch.propTypes = {
-    setCategories: PropTypes.func.isRequired
-};
+Search.propTypes = {
+    setCategory: PropTypes.func.isRequired
+};  

@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
-import { CategorySearch } from '@components/CategorySearch';
+import { Search } from '@components/Search';
 import { GifItem } from '@components/GifItem';
 import "./GifList.css"
 
 export const GifList = () => {
 
-    const [categories, setCategories] = useState([]);
+    const [category, setCategory] = useState("Dragon Ball Z");
 
     return (
         <>
-            <CategorySearch setCategories={ setCategories } />
-            <GifItem categories={ categories } />
+            <Search setCategory={ setCategory } />
+
+            <GifItem  
+                key={ category } 
+                category={ category } />
         </>
     )
 }
