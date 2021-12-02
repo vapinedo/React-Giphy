@@ -2,7 +2,7 @@ import React from 'react'
 
 export const GifCard = ({ title, url }) => {
     return (
-        <article className="col-sm-6 col-md-4 col-lg-3">
+        <article className="col-sm-6 col-md-4 col-lg-3 animate__animated animate__fadeIn animate_slow">
             <div className="card h-100">
                 <img src={ url } className="card-img-top" alt={ title } />
 
