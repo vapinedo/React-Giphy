@@ -2,7 +2,7 @@ import React from 'react'
 import { useFetchGifs } from '@hooks/useFetchGif'
 import { GifCard } from '@components/GifCard';
 
-export const GifItem = ({ category }) => {
+export const GifList = ({ category }) => {
 
     const { data:images, isLoading } = useFetchGifs(category);
 
