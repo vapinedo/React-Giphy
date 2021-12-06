@@ -16,4 +16,10 @@ describe("Test for <GifCard.js />", () => {
         const h5Tag = wrapper.find("h5");
         expect(h5Tag.text().trim()).toBe(title);
     });
+
+    test("Should contain a <img> tag and same url props for alt attribute img", () => {
+        const img = wrapper.find("img");
+        expect(img.prop("src")).toBe(url);
+        expect(img.prop("alt")).toBe(title);
+    });
 });
