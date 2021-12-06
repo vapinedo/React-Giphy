@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit testing for <Search /> component Should render correctly 1`] = `
+<section
+  className="row"
+>
+  <form
+    className="col-md-12 my-4"
+    onSubmit={[Function]}
+  >
+    <input
+      className="form-control animate__animated animate__fadeIn"
+      onChange={[Function]}
+      placeholder="Search gif ..."
+      type="text"
+      value=""
+    />
+  </form>
+</section>
+`;
