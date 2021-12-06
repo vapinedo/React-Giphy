@@ -22,4 +22,10 @@ describe("Test for <GifCard.js />", () => {
         expect(img.prop("src")).toBe(url);
         expect(img.prop("alt")).toBe(title);
     });
+
+    test("Should contain animate__fadeIn class", () => {
+        const articleWrapperTag = wrapper.find("article");
+        const className = articleWrapperTag.prop("className");
+        expect(className.includes("animate__fadeIn")).toBe(true);
+    });
 });
