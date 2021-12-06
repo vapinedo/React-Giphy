@@ -4,7 +4,7 @@ import { GifList } from '@components/GifList';
 
 export const HomePage = () => {
 
-    const [category, setCategory] = useState("Naruto");
+    const [category, setCategory] = useState("");
 
     return (
         <div className="container-lg main-wrapper">
